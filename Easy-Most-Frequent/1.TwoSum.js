@@ -15,6 +15,8 @@ return [0, 1].
  * @param {number} target
  * @return {number[]}
  */
+
+ //Brute-force: Time-complexity: n^2, space complexity: 1
 var twoSum = function(nums, target) {
     
     for (var i = 0; i < nums.length; i++) {
@@ -29,4 +31,25 @@ var twoSum = function(nums, target) {
             
         }
     }
+};
+
+//Optimized time complexity- n and space complexity n
+var twoSum = function(nums, target) {
+    
+    let map = {};
+    
+    for (var i = 0; i < nums.length; i++) {
+        let complement = (target - nums[i]);
+        
+        if (map[complement] !== undefined ) {
+            return [map[complement],i];
+        }
+        
+        if (map[nums[i]] === undefined) {
+            map[nums[i]] = i;
+        }
+        
+     
+    }
+    
 };
