@@ -15,10 +15,29 @@ nums2 = [2,5,6],       n = 3
 Output: [1,2,2,3,5,6]
 */
 
+//Time complexity is N, space complexity 1;
+var maxProfit = function(prices) {
+    let minPrice = Infinity;
+    var maxProfit = 0;
+    for (var i = 0; i < prices.length; i++) {
+       if (prices[i] < minPrice) {
+           minPrice = prices[i];
+       } else {
+           let profit = prices[i] - minPrice;
+           if (profit > maxProfit) {
+               maxProfit = profit;
+           }
+       }
+        
+    }
+    return maxProfit;
+};
+
+//Time complexity N^2, Space complexity 1;
 /**
  * @param {number[]} prices
  * @return {number}
- */
+ 
 var maxProfit = function(prices) {
     var maxProfit = 0;
     for (var i = 0; i < prices.length-1; i++) {
@@ -33,3 +52,4 @@ var maxProfit = function(prices) {
     }
     return maxProfit;
 };
+*/ 
