@@ -18,3 +18,41 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
+//Time complexity is N, space complexity 1;
+var maxProfit = function(prices) {
+    let minPrice = Infinity;
+    var maxProfit = 0;
+    for (var i = 0; i < prices.length; i++) {
+       if (prices[i] < minPrice) {
+           minPrice = prices[i];
+       } else {
+           let profit = prices[i] - minPrice;
+           if (profit > maxProfit) {
+               maxProfit = profit;
+           }
+       }
+        
+    }
+    return maxProfit;
+};
+
+//Time complexity N^2, Space complexity 1;
+/**
+ * @param {number[]} prices
+ * @return {number}
+ 
+var maxProfit = function(prices) {
+    var maxProfit = 0;
+    for (var i = 0; i < prices.length-1; i++) {
+        let buy = prices[i];
+        for (var x = i +1; x < prices.length; x++){
+            let sell = prices[x];
+            let profit = sell-buy;
+            if (profit > maxProfit) {
+                maxProfit = profit;
+            }
+        }
+    }
+    return maxProfit;
+};
+*/ 
