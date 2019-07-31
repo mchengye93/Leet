@@ -16,21 +16,20 @@ Minimize the total number of operations.
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function(nums) {
-    for (var i = 0; i < nums.length; i++) {
-        var current = nums[i];
-        
-        if (nums[i] === 0) {
-            var l = i;
-            //swap current with next until reach last position of array
-            for (var x = i+1; x < nums.length; x++) {
-                
-                nums[l] = nums[x];
-                
-                l++;
-            }
-            console.log(nums);
-            nums[nums.length-1] = 0;
+    let numZeroes = 0;
+    let pos = 0;
+    for (var i =0; i < nums.length;i++) {
+        if (nums[i] !== 0){
+           nums[pos] = nums[i];
+            pos++;
+        } else {
+            numZeroes++;
         }
+       
     }
+    while (numZeroes > 0) {
+         nums[nums.length-numZeroes] = 0;
+         numZeroes--;
+     }
     
 };
