@@ -14,3 +14,22 @@ nums2 = [2,5,6],       n = 3
 
 Output: [1,2,2,3,5,6]
 */
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    var maxProfit = 0;
+    for (var i = 0; i < prices.length-1; i++) {
+        let buy = prices[i];
+        for (var x = i +1; x < prices.length; x++){
+            let sell = prices[x];
+            let profit = sell-buy;
+            if (profit > maxProfit) {
+                maxProfit = profit;
+            }
+        }
+    }
+    return maxProfit;
+};
