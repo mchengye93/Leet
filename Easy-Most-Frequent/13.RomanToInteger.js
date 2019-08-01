@@ -62,10 +62,10 @@ var romanToInt = function(s) {
     //next is less or same as current as
     var int = 0;
     for (var i = 0; i < s.length-1; i++) {
-        if(romanToInt[s[i]] <= romanToInt[s[i+1]]) {
-            int+= romanToInt[s[i]];
+        if(romanToInt[s[i]] < romanToInt[s[i+1]] && i !== s.length-1) {
+            int-= romanToInt[s[i]];
         } else {
-            int+= romanToInt[s[i+1]] - romanToInt[s[i]];
+            int+= romanToInt[s[i]];
             
         }
         
