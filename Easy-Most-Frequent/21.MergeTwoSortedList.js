@@ -8,6 +8,8 @@ Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
 */
 
+
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -21,5 +23,10 @@ Output: 1->1->2->3->4->4
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
+    var node = new ListNode(-1);
+    
+    while (l1 !== null && l2 !==null){
+        
+    }
     
 };
