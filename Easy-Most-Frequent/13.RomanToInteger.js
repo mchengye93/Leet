@@ -44,3 +44,31 @@ Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 */
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function(s) {
+    
+    var romanToInt = {
+        'I': 1,
+        'V':5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    //next is less or same as current as
+    var int = 0;
+    for (var i = 0; i < s.length-1; i++) {
+        if(romanToInt[s[i]] <= romanToInt[s[i+1]]) {
+            int+= romanToInt[s[i]];
+        } else {
+            int+= romanToInt[s[i+1]] - romanToInt[s[i]];
+            
+        }
+        
+    }
+    return int;
+};
