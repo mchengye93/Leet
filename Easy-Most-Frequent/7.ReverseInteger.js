@@ -18,3 +18,18 @@ Assume we are dealing with an environment which could only store integers within
 [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer 
 overflows.
 */
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    return (
+      parseFloat(
+        x
+          .toString()
+          .split('')
+          .reverse()
+          .join('')
+      ) * Math.sign(x)
+    ) 
+  };
