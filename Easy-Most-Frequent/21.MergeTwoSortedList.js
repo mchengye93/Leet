@@ -1,5 +1,5 @@
 /*
-Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together 
+Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together
 the nodes of the first two lists.
 
 Example:
@@ -20,11 +20,10 @@ Output: 1->1->2->3->4->4
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1, l2) {
-    var node = new ListNode(-1);
-    
-    while (l1 !== null && l2 !==null){
-        
-    }
-    
+let mergeTwoLists = function (l1, l2) {
+  let node = new ListNode(-1);
+
+  while (l1 !== null && l2 !== null) {
+
+  }
 };
