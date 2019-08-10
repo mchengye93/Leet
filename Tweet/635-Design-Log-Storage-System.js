@@ -30,3 +30,60 @@ There will be at most 300 operations of Put or Retrieve.
 Year ranges from [2000,2017]. Hour ranges from [00,23].
 Output for Retrieve has no order required.
 */
+
+var LogSystem = function() {
+    this.log = {};
+    
+};
+
+/** 
+ * @param {number} id 
+ * @param {string} timestamp
+ * @return {void}
+ */
+LogSystem.prototype.put = function(id, timestamp) {
+    this.log[id] = timestamp;
+};
+
+/** 
+ * @param {string} s 
+ * @param {string} e 
+ * @param {string} gra
+ * @return {number[]}
+ */
+LogSystem.prototype.retrieve = function(s, e, gra) {
+    var time = {
+        'Year': 1,
+        'Month':2,
+        'Day': 3,
+        'Hour': 4,
+        'Minute': 5,
+        'Second': 6};
+    
+    var result = [];
+    var granular = time[gra];
+    var start = s.split(':');
+    var end = e.split(':');
+    
+
+    
+    var log = this.log;
+    
+    for (var key in log) {
+        var logTime = log[key];
+        var time = logTime.split(':');
+      
+        var inRange = true;
+        for (var i = 0; i < granular ; i++) {
+            if (!(time[i] >= start[i] && time[i] <= end[i] )) {
+                inRange = false;
+                break;
+                }
+        }
+        if (inRange) {
+            result.push(key);
+        }
+        
+    }
+    return result;
+};
