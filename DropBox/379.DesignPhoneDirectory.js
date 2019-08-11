@@ -63,3 +63,12 @@ PhoneDirectory.prototype.check = function(number) {
     }
     return false;
 };
+/**
+ * Recycle or release a number. 
+ * @param {number} number
+ * @return {void}
+ */
+PhoneDirectory.prototype.release = function(number) {
+    this.directory[number] = 0;
+    
+};
