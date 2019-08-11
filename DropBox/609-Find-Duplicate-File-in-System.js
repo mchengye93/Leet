@@ -45,3 +45,28 @@ What is the time complexity of your modified solution? What is the most time-con
 memory consuming part of it? How to optimize?
 How to make sure the duplicated files you find are not false positive?
 */
+/**
+ * @param {string[]} paths
+ * @return {string[][]}
+ */
+var findDuplicate = function(paths) {
+    var contentFiles = {};
+    for (var i = 0; i < paths.length; i++) {
+        var pathArray = paths[i].split(' ');
+        console.log(pathArray);
+        var filePath = pathArray[0];
+        for (var x = 1; x < pathArray.length; x++) {
+            var fileContent = pathArray[x].split('(');
+            console.log(fileContent);
+            var file = fileContent[0];
+            var content = fileContent[1].substring(0,fileContent[1].length-1);
+            console.log(file,content);
+            if (contentFiles[content] === undefined) {
+                contentFiles[content]=[filePath+'/'+file];
+            } else{
+                contentFiles[content].push(filePath+'/'+file);
+            }
+        }
+    }
+    
+};
