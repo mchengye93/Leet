@@ -26,7 +26,6 @@ function spellingBeeSolutions(wordlist, puzzles) {
         //Compare each word with given puzzle
         for (var i = 0; i < wordlist.length; i++) {
             var word = wordlist[i];
-            //console.log(word);
    
             var valid = true;
             
