@@ -72,3 +72,11 @@ PhoneDirectory.prototype.release = function(number) {
     this.directory[number] = 0;
     
 };
+
+/** 
+ * Your PhoneDirectory object will be instantiated and called as such:
+ * var obj = new PhoneDirectory(maxNumbers)
+ * var param_1 = obj.get()
+ * var param_2 = obj.check(number)
+ * obj.release(number)
+ */
