@@ -48,10 +48,9 @@ function spellingBeeSolutions(wordlist, puzzles) {
             if (valid) {
                 count++;
                 
-                
             }
         }
-            //console.log('Valid count =', count);
+           
             result.push(count);
     
 
