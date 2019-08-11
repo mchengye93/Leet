@@ -9,6 +9,7 @@
 
 //WordList: ['APPLE', 'PLEASE', 'PLEASE']
 //Puzzle: ['AELXWZ', 'AELPLXYZ']
+
 function spellingBeeSolutions(wordlist, puzzles) {
     // Write your code here
     //For each puzzle go through each letter to see if exist on wordList
@@ -21,7 +22,7 @@ function spellingBeeSolutions(wordlist, puzzles) {
         var key = puzzle[0];
         var count = 0;
 
-        //console.log(x +' : '+puzzle)
+      
         //Compare each word with given puzzle
         for (var i = 0; i < wordlist.length; i++) {
             var word = wordlist[i];
