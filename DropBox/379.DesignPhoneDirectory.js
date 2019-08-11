@@ -27,3 +27,14 @@ directory.check(2);
 // Release number 2 back to the pool.
 directory.release(2);
 */
+/**
+ * Initialize your data structure here
+        @param maxNumbers - The maximum numbers that can be stored in the phone directory.
+ * @param {number} maxNumbers
+ */
+var PhoneDirectory = function(maxNumbers) {
+    this.directory = {};
+    for (var i = 0; i < maxNumbers; i++) {
+        this.directory[i] = 0;
+    }
+};
