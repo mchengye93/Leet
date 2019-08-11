@@ -26,3 +26,18 @@ Note:
 1 <= time.length <= 60000
 1 <= time[i] <= 500
 */
+/**
+ * @param {number[]} time
+ * @return {number}
+ */
+var numPairsDivisibleBy60 = function(time) {
+    var totalPair = 0;
+    for (var i = 0 ; i < time.length-1;i++) {
+        for (var x = i + 1; x < time.length; x++) {
+            if ((time[i]+time[x])%60 === 0 ) {
+                totalPair++;
+            }
+        }
+    }
+    return totalPair;
+};
