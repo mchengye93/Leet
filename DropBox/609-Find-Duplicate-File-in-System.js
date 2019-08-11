@@ -67,7 +67,7 @@ var findDuplicate = function(paths) {
             }
         }
     }
-    console.log(contentFiles);
+    
     var resultArr = [];
     
     for (var key in contentFiles) {
