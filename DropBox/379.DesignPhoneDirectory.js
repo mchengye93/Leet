@@ -38,3 +38,17 @@ var PhoneDirectory = function(maxNumbers) {
         this.directory[i] = 0;
     }
 };
+/**
+ * Provide a number which is not assigned to anyone.
+        @return - Return an available number. Return -1 if none is available.
+ * @return {number}
+ */
+PhoneDirectory.prototype.get = function() {
+    for (var key in this.directory) {
+        if (this.directory[key] === 0) {
+            this.directory[key]= 1;
+            return key;
+        }
+    }
+    return -1;
+};
