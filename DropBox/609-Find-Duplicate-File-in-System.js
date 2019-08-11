@@ -53,7 +53,7 @@ var findDuplicate = function(paths) {
     var contentFiles = {};
     for (var i = 0; i < paths.length; i++) {
         var pathArray = paths[i].split(' ');
-       
+    
         var filePath = pathArray[0];
         for (var x = 1; x < pathArray.length; x++) {
             var fileContent = pathArray[x].split('(');
@@ -67,5 +67,6 @@ var findDuplicate = function(paths) {
             }
         }
     }
+    console.log(contentFiles);
     
 };
