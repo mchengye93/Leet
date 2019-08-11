@@ -52,3 +52,14 @@ PhoneDirectory.prototype.get = function() {
     }
     return -1;
 };
+/**
+ * Check if a number is available or not. 
+ * @param {number} number
+ * @return {boolean}
+ */
+PhoneDirectory.prototype.check = function(number) {
+    if (this.directory[number] === 0) {
+        return true;
+    }
+    return false;
+};
