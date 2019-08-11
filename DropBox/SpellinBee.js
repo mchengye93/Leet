@@ -34,7 +34,7 @@ function spellingBeeSolutions(wordlist, puzzles) {
                 valid = false;
             } else {
                 for (var s = 0; s < word.length; s++) {
-              
+            
                 //check if match key or letter of word exist in puzzle 
                 if (puzzle.indexOf(word[s]) === -1) {
                     valid = false;
@@ -47,7 +47,7 @@ function spellingBeeSolutions(wordlist, puzzles) {
           
             if (valid) {
                 count++;
-                //console.log('Valid count =', count);
+                
                 
             }
         }
