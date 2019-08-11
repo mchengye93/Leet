@@ -57,7 +57,6 @@ var findDuplicate = function(paths) {
         var filePath = pathArray[0];
         for (var x = 1; x < pathArray.length; x++) {
             var fileContent = pathArray[x].split('(');
-            console.log(fileContent);
             var file = fileContent[0];
             var content = fileContent[1].substring(0,fileContent[1].length-1);
             console.log(file,content);
