@@ -75,5 +75,6 @@ var findDuplicate = function(paths) {
             resultArr.push(contentFiles[key]);
         }
     }
+    return resultArr;
     
 };
