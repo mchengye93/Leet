@@ -36,11 +36,11 @@ function spellingBeeSolutions(wordlist, puzzles) {
                 for (var s = 0; s < word.length; s++) {
             
                 //check if match key or letter of word exist in puzzle 
-                if (puzzle.indexOf(word[s]) === -1) {
-                    valid = false;
-                    break;
+                    if (puzzle.indexOf(word[s]) === -1) {
+                        valid = false;
+                        break;
+                    }
                 }
-            }
             }
 
             }
