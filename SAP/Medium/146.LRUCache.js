@@ -27,3 +27,11 @@ cache.get(1);       // returns -1 (not found)
 cache.get(3);       // returns 3
 cache.get(4);       // returns 4
  */
+
+var doubleLinkedList = () => {
+    this.key = 0;
+    this.value = 0;
+    this.next= null;
+    this.prev = null;
+    
+}
