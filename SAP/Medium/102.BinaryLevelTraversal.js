@@ -41,7 +41,7 @@ var levelOrder = function(root) {
     //collect all nodes of each levels
     for (let i = 0; i < levelsCount; i++) {
         var currentLevelNodes = currentLevel[i];
-        console.log(currentLevelNodes.length);
+       // console.log(currentLevelNodes.length);
         var nextLevelNodes = [];
         for (let x = 0; x < currentLevelNodes.length; x++) {
             var currentNode  = currentLevelNodes[x];
