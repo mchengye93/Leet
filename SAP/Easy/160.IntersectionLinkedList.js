@@ -78,11 +78,11 @@ var getIntersectionNode = function(headA, headB) {
         if(map[nextNode.val] !== undefined ) {
             let currentNode = map[nextNode.val];
             if(nextNode === currentNode) {
-                if(currentNode.next!==null){
-                    if(nextNode.next.val === currentNode.next.val) {
-                    return nextNode;
-                    }
-                }   
+               
+                if(nextNode.next === currentNode.next) {
+                return nextNode;
+                }
+                  
            
               
             }
