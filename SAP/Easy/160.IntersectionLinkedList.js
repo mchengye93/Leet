@@ -63,6 +63,29 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
+    //find the section where they are both the same ending
+    let node = headA;
+    let map = {};
+    while(node!== null) {
+        if (map[node.val] === undefined) {
+            map[node.val] = node;
+        }
+        node = node.next;
+    }
     
-    
+    let nextNode = headB;
+    while(nextNode !==null) {
+        if(map[nextNode.val] !== undefined ) {
+            let currentNextNode = map[nextNode.val];
+            if(currentNextNode.next!==null){
+                if(nextNode.next.val === currentNextNode.next.val) {
+                return nextNode;
+            }
+              
+            }
+             
+        }
+        nextNode = nextNode.next;
+    }
+    return null;
 };
