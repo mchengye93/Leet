@@ -22,6 +22,12 @@ return its level order traversal as:
  *     this.val = val;
  *     this.left = this.right = null;
  * }
+ *//**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
  */
 /**
  * @param {TreeNode} root
@@ -30,8 +36,11 @@ return its level order traversal as:
 var levelOrder = function(root) {
     let levels = [];
     var currentLevel = [];
-    levels.push([root.val]);
-    currentLevel.push([root,root]);
+    if(root!== null){
+     levels.push([root.val]);
+    currentLevel.push([root]);  
+    }
+   
     
     //count how many levels we have
    
@@ -41,7 +50,7 @@ var levelOrder = function(root) {
     //collect all nodes of each levels
     for (let i = 0; i < levelsCount; i++) {
         var currentLevelNodes = currentLevel[i];
-       // console.log(currentLevelNodes.length);
+        //console.log(currentLevelNodes);
         var nextLevelNodes = [];
         for (let x = 0; x < currentLevelNodes.length; x++) {
             var currentNode  = currentLevelNodes[x];
@@ -54,7 +63,19 @@ var levelOrder = function(root) {
             
             
         }
+        if (nextLevelNodes.length > 0) {
+            currentLevel.push(nextLevelNodes);
+        }
     }
+    for (let i = 1; i < levelsCount; i++) {
+        let currentNodes = currentLevel[i];
+        let nodesVal = [];
+        for (let x = 0; x < currentNodes.length; x++ ) {
+            nodesVal.push(currentNodes[x].val);
+        }
+        levels.push(nodesVal);
+    }
+    return levels;
 };
 
 var countLevels = (node) => {
