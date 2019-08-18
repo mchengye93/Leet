@@ -12,3 +12,10 @@ Example 2:
 Input: "cbbd"
 Output: "bb"
 */
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+    
+};
