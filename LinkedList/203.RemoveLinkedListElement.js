@@ -27,30 +27,19 @@ Output: 1->2->3->4->5
  */
 var removeElements = function(head, val) {
     
-    if (head !==null){
+    while(head && head.val === val){
+        head = head.next;
+    }
+    if(head === null) return head;
     var current = head;
-    var next = current.next;
-        
-    if (current.val === val) {
-        current = next;
-        if(next !== null){
-         next = next.next;
+    while(current.next !== null){
+        if(current.next.val !== val){
+            current = current.next;
         }
-       
-    }
-    
-    while (next !== null) {
-        if (next.val === val) {
-            current.next = next.next;
-            next = next.next;
-        } else {
-            current = next;
-            next = next.next;
+        else{
+            current.next = current.next.next;
         }
     }
-    }
-   
     
-  
-    return head;
+    return head
 };
