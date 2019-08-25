@@ -24,7 +24,7 @@ var merge = function(intervals) {
         let upper = interval[1];
         let change = false;
         console.log('[currentupper,currentLower]', lower,upper);
-        for (let x = i + 1; x < intervals.length-1; x++) {
+        for (let x = i + 1; x < intervals.length; x++) {
             let nextInterval = intervals[x];
             let nextLower = nextInterval[0];
             let nextUpper = nextInterval[1];
@@ -33,21 +33,26 @@ var merge = function(intervals) {
             //we are at same range so we update upper
             
             if (nextLower >= lower && nextLower <= upper) {
+                
                     if (nextUpper > upper) {
                         upper = nextUpper;
                         console.log('Update upper: ', upper );
                         change = true;
+                        
                     }
                     
                 }
             
              if (nextUpper >= lower && nextUpper <= upper) {
+                 
                 if (nextLower < lower) {
                     lower = nextLower;
                     console.log('Update lower: ', lower);
                     change= true;
+
                 }
             }
+        
             }
         if (change) { i++};
          newResult.push([lower,upper]);   
