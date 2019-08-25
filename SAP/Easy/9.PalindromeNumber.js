@@ -21,3 +21,18 @@ Follow up:
 
 Coud you solve it without converting the integer to a string?
 */
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    if (x < 0) {
+        return false;
+    }
+    let strX = x + '';
+    
+    let reverse = strX.split('').reverse().join('');
+    
+    return reverse === strX;
+    
+};
