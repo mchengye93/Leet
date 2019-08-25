@@ -81,10 +81,7 @@ var getIntersectionNode = function(headA, headB) {
                
                 if(nextNode.next === currentNode.next) {
                 return nextNode;
-                }
-                  
-           
-              
+                }           
             }
              
         }
