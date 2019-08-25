@@ -1,4 +1,6 @@
-
+/*
+Given phrases connect phrases where beginning matches the end of some phrases.
+*/
 function generate_phrases(phrases) {
     let beginning = {};
     let ending = {};
