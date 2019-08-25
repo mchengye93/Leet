@@ -25,5 +25,6 @@ Given target = 20, return false.
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
+    //search for value in matrix brute force
     
 };
